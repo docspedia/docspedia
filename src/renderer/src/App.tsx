@@ -1,33 +1,20 @@
-import Versions from './components/Versions'
-import electronLogo from './assets/electron.svg'
-
 function App(): JSX.Element {
-  const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
+  // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
 
   return (
     <>
-      <img alt="logo" className="logo" src={electronLogo} />
-      <div className="creator">Powered by electron-vite</div>
-      <div className="text">
-        Build an Electron app with <span className="react">React</span>
-        &nbsp;and <span className="ts">TypeScript</span>
-      </div>
-      <p className="tip">
-        Please try pressing <code>F12</code> to open the devTool
-      </p>
-      <div className="actions">
-        <div className="action">
-          <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">
-            Documentation
-          </a>
-        </div>
-        <div className="action">
-          <a target="_blank" rel="noreferrer" onClick={ipcHandle}>
-            Send IPC
-          </a>
-        </div>
-      </div>
-      <Versions></Versions>
+      <h1 className="text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus aliquid
+        vero modi illum, nobis tenetur placeat dolore corporis omnis optio officiis quis aperiam,
+        velit nulla reprehenderit temporibus possimus dolorum.
+      </h1>
+      <button className="btn btn-primary">Click me</button>
+      <button className="btn btn-secondary rounded-full btn-sm">Click me</button>
+      <button className="btn btn-accent">Click me</button>
+      <button className="btn">Click me</button>
+      <button className="btn btn-neutral">Click me</button>
+      <button className="btn btn-success">Click me</button>
+      <button className="btn btn-warning">Click me</button>
     </>
   )
 }
