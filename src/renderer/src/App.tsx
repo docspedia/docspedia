@@ -1,4 +1,4 @@
-import TitleBar from './components/TitleBar'
+import TitleBar from './components/title-bar/TitleBar'
 
 function App(): JSX.Element {
   // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
@@ -6,7 +6,6 @@ function App(): JSX.Element {
   return (
     <>
       <TitleBar />
-
       <h1 className="text-xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis repellendus aliquid
         vero modi illum, nobis tenetur placeat dolore corporis omnis optio officiis quis aperiam,
