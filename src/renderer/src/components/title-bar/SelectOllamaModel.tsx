@@ -1,8 +1,8 @@
 const SelectOllamaModel = (): JSX.Element => {
   return (
     <>
-      <select className="select select-bordered  max-w-xs select-sm focus:ring-0 focus:ring-offset-0">
-        <option disabled selected>
+      <select className="select select-bordered  min-w-64 max-w-xs select-sm text-center">
+        <option disabled selected className="">
           Select your model
         </option>
         <option>llama3.2:1b</option>
