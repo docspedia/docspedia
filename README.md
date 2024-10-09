@@ -4,6 +4,8 @@
 
 ![app demo](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/demo2.png?raw=true)
 
+![upload doc modal](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/uplode-doc.png?raw=true)
+
 
 ## Project Setup
 
