@@ -45,7 +45,7 @@ const TitleBar = (): JSX.Element => {
       </div>
       <button
         style={SelectStyle}
-        className="btn btn-sm font-bold right-0 absolute mr-3"
+        className="btn btn-ghost btn-sm font-bold right-0 absolute mr-3 "
         onClick={() => document.getElementById('doc_upload_modal').showModal()}
       >
         <Upload width={20} />
