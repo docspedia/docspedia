@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import SelectOllamaModel from './SelectOllamaModel'
 
-import { MoveLeft } from 'lucide-react'
+import { MoveLeft, Upload } from 'lucide-react'
 
 interface ExtendedCSSProperties extends React.CSSProperties {
   WebkitAppRegion?: 'drag' | 'no-drag'
@@ -19,9 +21,9 @@ const SelectStyle: ExtendedCSSProperties = {
 
 const GoToHomePage = (): JSX.Element => {
   return (
-    <button className="btn btn-xs btn-ghost text-gray-600">
+    <Link to="/" className="btn btn-xs btn-ghost text-gray-600">
       <MoveLeft width={22} />
-    </button>
+    </Link>
   )
 }
 
@@ -29,12 +31,21 @@ const TitleBar = (): JSX.Element => {
   return (
     <div
       style={titleBarStyle}
-      className="flex items-center justify-center border-b-[1.5px]  border-gray-100 h-11 "
+      className="flex items-center justify-center border-b-[1.5px] bg-base-100 border-gray-100 h-11 sticky top-0"
     >
-      <div style={SelectStyle} className="flex flex-row items-center justify-center gap-1 ">
-        <GoToHomePage />
-        <SelectOllamaModel />
+      <div
+        style={SelectStyle}
+        className="flex items-center justify-between gap-1 bg-white absolute"
+      >
+        {/* <div className="w-20"></div> */}
+        <div className="flex items-center gap-1.5">
+          <GoToHomePage />
+          <SelectOllamaModel />
+        </div>
       </div>
+      <button style={SelectStyle} className="btn btn-sm font-bold right-0 absolute mr-3">
+        <Upload width={20} />
+      </button>
     </div>
   )
 }
