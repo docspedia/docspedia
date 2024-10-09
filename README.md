@@ -1,6 +1,8 @@
 # docspedia
 
-OLLAMA client, Building.....
+## OLLAMA based R.A.G mac app, Building.....
+
+![app demo](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/demo2.png?raw=true)
 
 
 ## Project Setup
