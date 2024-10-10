@@ -1,12 +1,10 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { BookOpenText, Trash2 } from 'lucide-react'
+import { BookOpenText, Trash2, Upload } from 'lucide-react'
 
 const gTitle = 'r2 setuped successfull r2 setuped successfull'
 
-// interface DocUploadModalProps {
-//   handleModalState: () => void
-// }
 
 interface DocOverviewProps {
   title: string
@@ -81,42 +79,59 @@ const DocOverview = ({ title, docId }: DocOverviewProps): JSX.Element => {
   )
 }
 
-const Documents = (): JSX.Element => {
-  // const [showDocUploadModal, setShowDocUploadModal] = useState<boolean>(false)
+const DocumentsLayout = (): JSX.Element => {
+  return (
+    <div className="flex flex-col items-center px-5 pt-5 pb-3">
+      <div className="flex flex-col gap-3 w-full max-w-6xl">
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+        <DocOverview title={gTitle} docId="123456678899" />
+      </div>
+    </div>
+  )
+}
 
-  // const handleDocUploadModal = (): void => {
-  //   setShowDocUploadModal(!showDocUploadModal)
-  // }
+const UploadFirstDocLayout = (): JSX.Element => {
+  return (
+    <div
+      onClick={() => document.getElementById('doc_upload_modal').showModal()}
+      className="flex items-center justify-center min-h-screen w-screen fixed -mt-7 cursor-pointer"
+    >
+      <div className="flex flex-col gap-3 items-center justify-center w-full max-w-xl h-[26rem] border-4 border-dotted ">
+        <Upload className="text-gray-600" width={500} height={100} />
+        <p className=" tracking-tighter text-4xl font-light">Upload your document</p>
+        <span className="tracking-tight text">PDF, DOC and DOCX supported</span>
+      </div>
+    </div>
+  )
+}
+
+const Documents = (): JSX.Element => {
+  const [docs, setDocs] = useState<number | null>(null)
 
   return (
     <>
       <DocUploadModal />
-      <div className="flex flex-col items-center px-5 pt-5 pb-3">
-        <div className="flex flex-col gap-3 w-full max-w-6xl">
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-          <DocOverview title={gTitle} docId="123456678899" />
-        </div>
-      </div>
+      {docs ? <DocumentsLayout /> : <UploadFirstDocLayout />}
     </>
   )
 }
