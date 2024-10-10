@@ -6,6 +6,8 @@
 
 ![upload doc modal](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/uplode-doc.png?raw=true)
 
+![vergin upload doc](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/vergin-upload-doc.png?raw=true)
+
 
 ## Project Setup
 
