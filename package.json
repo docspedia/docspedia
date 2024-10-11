@@ -23,9 +23,12 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
+    "@tailwindcss/typography": "^0.5.15",
     "electron-updater": "^6.1.7",
     "lucide-react": "^0.451.0",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "tailwind-extended-shadows": "^0.4.0",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^2.0.0",

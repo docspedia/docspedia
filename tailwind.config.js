@@ -7,5 +7,10 @@ export default {
   daisyui: {
     themes: ['emerald']
   },
-  plugins: [require('daisyui')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('daisyui'),
+    require('tailwind-extended-shadows'),
+    require('tailwind-scrollbar-hide')
+  ]
 }
