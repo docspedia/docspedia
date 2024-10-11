@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import SelectOllamaModel from './SelectOllamaModel'
@@ -28,6 +29,7 @@ const GoToHomePage = (): JSX.Element => {
 }
 
 const TitleBar = (): JSX.Element => {
+  const location = useLocation().pathname
   return (
     <div
       style={titleBarStyle}
@@ -48,7 +50,7 @@ const TitleBar = (): JSX.Element => {
         className="btn btn-ghost btn-sm font-bold right-0 absolute mr-3 "
         onClick={() => document.getElementById('doc_upload_modal').showModal()}
       >
-        <Upload width={20} />
+        {location !== '/chat' && <Upload width={20} />}
       </button>
     </div>
   )
