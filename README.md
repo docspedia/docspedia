@@ -8,6 +8,7 @@
 
 ![vergin upload doc](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/vergin-upload-doc.png?raw=true)
 
+![chat page UI](https://github.com/docspedia/docspedia/blob/main/src/renderer/src/assets/chat.png?raw=true)
 
 ## Project Setup
 
