@@ -5,10 +5,49 @@ import { BookOpenText, Trash2, Upload } from 'lucide-react'
 
 const gTitle = 'r2 setuped successfull r2 setuped successfull'
 
-
 interface DocOverviewProps {
   title: string
   docId: string
+}
+
+const DocDeleteModal = (): JSX.Element => {
+  return (
+    <dialog id="doc_delete_modal" className="modal modal-bottom sm:modal-middle">
+      <div
+        style={{
+          borderRadius: '0px'
+        }}
+        className="modal-box flex flex-col gap-5 bg-base-100"
+      >
+        <form method="dialog">
+          {/* if there is a button in form, it will close the modal */}
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-xl">
+            ✕
+          </button>
+        </form>
+        <h3 className="font-base text-2xl">Delete Document</h3>
+        <div className="flex flex-col gap-5">
+         <p>Do you really want to delete name.pdf ? </p>
+          <button
+            // disabled={isDocUploading}
+            // type="submit"
+            // onClick={()=>document.getElementById('doc_upload_modal').close()}
+
+            className="btn btn-error self-end rouned-none rounded-none"
+          >
+            Delete
+          </button>
+        </div>
+
+        {/* <p className="text-center text-xs text-red-600">
+          Please be patient as we feed the document to the AI.
+        </p> */}
+        {/* {isDocUploading&&(<p className="text-center text-xs text-red-600">
+            Please be patient as we feed the document to the AI.
+          </p>)} */}
+      </div>
+    </dialog>
+  )
 }
 
 const DocUploadModal = (): JSX.Element => {
@@ -74,7 +113,9 @@ const DocOverview = ({ title, docId }: DocOverviewProps): JSX.Element => {
           <span className="hidden lg:block">{title.substr(0, 55)}</span>
         </Link>
       </div>
-      <Trash2 width={20} className="cursor-pointer" />
+      <Trash2
+      onClick={() => document.getElementById('doc_delete_modal').showModal()}
+       width={20} className="cursor-pointer" />
     </div>
   )
 }
@@ -126,11 +167,12 @@ const UploadFirstDocLayout = (): JSX.Element => {
 }
 
 const Documents = (): JSX.Element => {
-  const [docs, setDocs] = useState<number | null>(null)
+  const [docs, setDocs] = useState<number | null>(1)
 
   return (
     <>
       <DocUploadModal />
+      <DocDeleteModal/>
       {docs ? <DocumentsLayout /> : <UploadFirstDocLayout />}
     </>
   )
